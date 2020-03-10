@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Anson Cheung" name="author"/>
+<link href="https://www.nbook.online/ecmp_server_deploy_product/" rel="canonical"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>生产环境部署 - 内容管理平台</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css" rel="stylesheet"/>
+<script defer="" src="../js/jquery-1.10.2.min.js"></script>
+<script defer="" src="../js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="..">内容管理平台</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="..">概述</a>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">内容管理平台 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../1.md">部署手册</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">生产环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_upgrade_product/">生产环境升级</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_deploy_emergency/">应急环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_deploy_recovery/">灾备环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_deploy_test/">测试环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_operation_product/">操作手册</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_server_maintenance_product/">运维手册</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">缓存服务器 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../1.md">部署手册</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_cache_deploy_linux/">Linux生产环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_cache_deploy_linux/">Windows生产环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_cache_deploy_linux_alone/">Linux独立环境部署</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_cache_operation_product/">操作手册</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ecmp_cache_maintenance_product/">运维手册</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">第三方产品运维 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../tongtech_gtp_maintenance_product/">GTP运维手册</a>
+</li>
+<li>
+<a class="dropdown-item" href="../emc_documentum_maintenance_product/">Documentum运维手册</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">常见问题 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../troubleshooting/">常见故障排除</a>
+</li>
+<li>
+<a class="dropdown-item" href="../auxiliary_troubleshooting/">自助故障排除</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">关于 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../release_notes/">版本信息</a>
+</li>
+<li>
+<a class="dropdown-item" href="../technical_support/">技术支持</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href=".." rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../ecmp_server_upgrade_product/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#using-python-markdown-on-the-command-line">Using Python-Markdown on the Command Line</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#setup">Setup</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#usage">Usage</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#using-extensions">Using Extensions</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="using-python-markdown-on-the-command-line">Using Python-Markdown on the Command Line</h1>
+<p>While Python-Markdown is primarily a python library, a command line script is
+included as well. While there are many other command line implementations
+of Markdown, you may not have them installed, or you may prefer to use
+Python-Markdown's various extensions.</p>
+<p>Generally, you will want to have the Markdown library fully installed on your
+system to run the command line script. See the
+<a href="install.md">Installation instructions</a> for details.</p>
+<p>Python-Markdown's command line script takes advantage of Python's <code>-m</code> flag.
+Therefore, assuming the python executable is on your system path, use the
+following format:</p>
+<pre><code class="bash">python -m markdown [options] [args]
+</code></pre>
+<p>That will run the module as a script with the options and arguments provided.</p>
+<p>At its most basic usage, one would simply pass in a file name as the only argument:</p>
+<pre><code class="bash">python -m markdown input_file.txt
+</code></pre>
+<p>Piping input and output (on <code>STDIN</code> and <code>STDOUT</code>) is fully supported as well.
+For example:</p>
+<pre><code class="bash">echo "Some **Markdown** text." | python -m markdown &gt; output.html
+</code></pre>
+<p>Use the <code>--help</code> option for a list all available options and arguments:</p>
+<pre><code class="bash">python -m markdown --help
+</code></pre>
+<p>If you don't want to call the python executable directly (using the <code>-m</code> flag),
+follow the instructions below to use a wrapper script:</p>
+<h2 id="setup">Setup</h2>
+<p>Upon installation, the <code>markdown_py</code> script will have been copied to
+your Python "Scripts" directory. Different systems require different methods to
+ensure that any files in the Python "Scripts" directory are on your system
+path.</p>
+<ul>
+<li>
+<p><strong>Windows</strong>:</p>
+<p>Assuming a default install of Python on Windows, your "Scripts" directory
+is most likely something like <code>C:\\Python26\Scripts</code>. Verify the location
+of your "Scripts" directory and add it to you system path.</p>
+<p>Calling <code>markdown_py</code> from the command line will call the wrapper batch
+file <code>markdown_py.bat</code> in the <code>"Scripts"</code> directory created during install.</p>
+</li>
+<li>
+<p><strong>*nix</strong> (Linux, OSX, BSD, Unix, etc.):</p>
+<p>As each *nix distribution is different and we can't possibly document all
+of them here, we'll provide a few helpful pointers:</p>
+<ul>
+<li>
+<p>Some systems will automatically install the script on your path. Try it
+  and see if it works. Just run <code>markdown_py</code> from the command line.</p>
+</li>
+<li>
+<p>Other systems may maintain a separate "Scripts" ("bin") directory which
+  you need to add to your path. Find it (check with your distribution) and
+  either add it to your path or make a symbolic link to it from your path.</p>
+</li>
+<li>
+<p>If you are sure <code>markdown_py</code> is on your path, but it still is not being
+  found, check the permissions of the file and make sure it is executable.</p>
+</li>
+</ul>
+<p>As an alternative, you could just <code>cd</code> into the directory which contains
+the source distribution, and run it from there. However, remember that your
+markdown text files will not likely be in that directory, so it is much
+more convenient to have <code>markdown_py</code> on your path.</p>
+</li>
+</ul>
+<p>!!!Note
+    Python-Markdown uses <code>"markdown_py"</code> as a script name because the Perl
+    implementation has already taken the more obvious name "markdown".
+    Additionally, the default Python configuration on some systems would cause a
+    script named <code>"markdown.py"</code> to fail by importing itself rather than the
+    markdown library. Therefore, the script has been named <code>"markdown_py"</code> as a
+    compromise. If you prefer a different name for the script on your system, it
+    is suggested that you create a symbolic link to <code>markdown_py</code> with your
+    preferred name.</p>
+<h2 id="usage">Usage</h2>
+<p>To use <code>markdown_py</code> from the command line, run it as</p>
+<pre><code class="bash">markdown_py input_file.txt
+</code></pre>
+<p>or</p>
+<pre><code class="bash">markdown_py input_file.txt &gt; output_file.html
+</code></pre>
+<p>For a complete list of options, run</p>
+<pre><code class="bash">markdown_py --help
+</code></pre>
+<h2 id="using-extensions">Using Extensions</h2>
+<p>To load a Python-Markdown extension from the command line use the <code>-x</code>
+(or <code>--extension</code>) option. The extension module must be on your <code>PYTHONPATH</code>
+(see the <a href="extensions/api.md">Extension API</a> for details). The extension can
+then be invoked by the name assigned to an entry point or using Python's dot
+notation to point to an extension</p>
+<p>For example, to load an extension with the assigned entry point name <code>myext</code>,
+run the following command:</p>
+<pre><code class="bash">python -m markdown -x myext input.txt
+</code></pre>
+<p>And to load an extension with Python's dot notation:</p>
+<pre><code class="bash">python -m markdown -x path.to.module:MyExtClass input.txt
+</code></pre>
+<p>To load multiple extensions, specify an <code>-x</code> option for each extension:</p>
+<pre><code class="bash">python -m markdown -x myext -x path.to.module:MyExtClass input.txt
+</code></pre>
+<p>If the extension supports configuration options (see the documentation for the
+extension you are using to determine what settings it supports, if any), you
+can pass them in as well:</p>
+<pre><code class="bash">python -m markdown -x myext -c config.yml input.txt
+</code></pre>
+<p>The <code>-c</code> (or <code>--extension_configs</code>) option accepts a file name. The file must be
+in either the <a href="https://yaml.org/">YAML</a> or <a href="https://json.org/">JSON</a> format and contain YAML or JSON data that would
+map to a Python Dictionary in the format required by the
+<a href="reference.md#extension_configs"><code>extension_configs</code></a> keyword of the <code>markdown.Markdown</code> class. Therefore,
+the file <code>config.yaml</code> referenced in the above example might look like this:</p>
+<pre><code class="yaml">myext:
+    option1: 'value1'
+    option2: True
+</code></pre>
+<p>Similarly, a JSON configuration file might look like this:</p>
+<pre><code class="json">{
+  "myext":
+  {
+    "option1": "value1",
+    "option2": "value2"
+  }
+}
+</code></pre>
+<p>Note that while the <code>--extension_configs</code> option does specify the
+<code>myext</code> extension, you still need to load the extension with the <code>-x</code> option,
+or the configuration for that extension will be ignored. Further, if an
+extension requires a value that cannot be parsed in JSON (for example a
+reference to a function), one has to use a YAML configuration file.</p>
+<p>The <code>--extension_configs</code> option will only support YAML configuration files if
+<a href="https://pyyaml.org/">PyYAML</a> is installed on your system. JSON should work with no additional
+dependencies. The format of your configuration file is automatically detected.</p></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>中国人民银行  •  金电技术开发中心  (ACS项目组)</p>
+<!--            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>  -->
+</footer>
+<script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script defer="" src="../js/base.js"></script>
+<script defer="" src="../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="text"/>
+</div>
+</form>
+<div id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

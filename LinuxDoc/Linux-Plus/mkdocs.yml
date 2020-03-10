@@ -1,51 +1,21 @@
-site_name: 内容管理平台
+site_name: CompTIA Linux+
 site_url: https://www.nbook.online
 site_description: Project documentation with Markdown.
 site_author: Anson Cheung
  
 docs_dir: docs
-theme: readthedocs
- 
+theme: ivory
+dev_addr: 127.0.0.1:8080
 
-nav:
-    - 概述: index.md
-    - 总行节点:
-        -  内容管理平台: Ecmp/writing-your-docs.md 
-        -  协同平台: user-guide/writing-your-docs.md 
-    - 省级节点:
-        - GTP运维手册: JavaDoc/index.md 
-        - Documentum运维手册: JavaDoc/index.md 
-        - Java技术: JavaDoc/index.md 
-        - Linux技术: LinuxDoc/index.md
-    - 业务处理中心节点:
-        - GTP运维手册: JavaDoc/index.md 
-        - Documentum运维手册: JavaDoc/index.md 
-        - Java技术: JavaDoc/index.md 
-        - Linux技术: LinuxDoc/index.md
-    - 关于:
-        - Release Notes: about/release-notes.md
-        - Contributing: about/contributing.md
-        - License: about/license.md 
-copyright: 中国人民银行  &#8226;  金电技术开发中心  (ACS项目组)
+  
+copyright: 中国人民银行  &#8226;  金电技术开发中心
  
-plugins: 
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: false
+        baselevel: 2
+    - sane_lists
+plugins:
     - search
-    - with-pdf:
-        author: 张晓华
-        copyright: 金电技术开发中心
-        #
-        cover: true
-        cover_title: 内容管理平台
-        cover_subtitle: 运维手册
-        heading_shift: true
-        toc_level: 3
-        ordered_chapter_level: 2
-        #excludes_children:
-        #    - 'release-notes/:upgrading'
-        #    - 'release-notes/:changelog'
-        #
-        output_path: ecmp-document.pdf
-        #enabled_if_env: ENABLE_PDF_EXPORT
-        #
-        #debug_html: true
-        #verbose: true
+    - with-pdf
