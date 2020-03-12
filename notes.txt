@@ -1,0 +1,65 @@
+ 64  07/03/20 19:22:04 git clone https://github.com/libracoder/bootstrap4-offline-docs.git
+  133  08/03/20 16:06:33 git remote set-url origin https://github.com/xiaohuacheung/Docs.git
+  134  08/03/20 16:13:18 git remote set-url master https://github.com/xiaohuacheung/Docs.git
+  540  11/03/20 00:59:06 git add --all
+  541  11/03/20 00:59:11 git status
+  542  11/03/20 00:59:26 git commit -m`date`
+  543  11/03/20 00:59:33 git commit -m `date`
+  544  11/03/20 00:59:55 git add -all
+  545  11/03/20 01:00:00 git add --all
+  546  11/03/20 01:00:15 git commit -m "new file added"
+  547  11/03/20 01:00:23 git push
+  556  11/03/20 15:05:51 mkdir github
+  557  11/03/20 15:05:53 cd github/
+  559  11/03/20 15:05:58 git clone https://github.com/tonsky/FiraCode.git
+  784  12/03/20 11:41:13 git clone https://github.com/gradle/gradle-build-scan-quickstart
+ 1004  12/03/20 19:16:07 git add --all
+ 1011  12/03/20 19:16:34 git add --all
+ 1012  12/03/20 19:16:45 git commit -m`date`
+ 1013  12/03/20 19:16:52 git commit -m"`date`"
+ 1014  12/03/20 19:16:57 git push
+ 1025  12/03/20 19:20:59 history |grep git
+ 1025  12/03/20 19:20:59 history |grep git
+[Anson@localhost Docs]$ history |grep mkdocs
+  154  08/03/20 16:20:09 pip install mkdocs
+  158  08/03/20 16:20:37 pip install mkdocs
+  162  08/03/20 16:22:03 pip install mkdocs
+  163  08/03/20 16:22:40 sudo pip install mkdocs
+  183  09/03/20 00:28:53 mkdocs serve -h
+  185  09/03/20 00:36:30 pip install mkdocs-material
+  277  10/03/20 01:24:32 mkdocs build -clean
+  278  10/03/20 01:24:38 mkdocs build --clean
+  279  10/03/20 01:24:56 history |grep mkdocs |grep build
+  280  10/03/20 01:25:03 mkdocs build --clean 
+  281  10/03/20 01:33:48 mkdocs serve
+  282  10/03/20 01:43:45 mkdocs build --clean 
+  283  10/03/20 01:43:48 mkdocs serve
+  285  10/03/20 13:54:26 sudo pip install mkdocs-nav-enhancements
+  302  10/03/20 12:27:01 mkdocs build --clean
+  303  10/03/20 12:27:17 mkdocs serve
+  304  10/03/20 12:56:03 mkdocs build --clean
+  305  10/03/20 12:56:13 mkdocs serve
+  306  10/03/20 13:10:10 mkdocs build --clean
+  307  10/03/20 13:13:05 mkdocs build --clean --socks5 127.0.0.1:1080
+  309  10/03/20 13:13:49 mkdocs build --clean
+  313  10/03/20 13:17:59 mkdocs build --clean
+  318  10/03/20 13:21:57 mkdocs build --clean
+  333  10/03/20 13:26:30 mkdocs build --clean
+  334  10/03/20 13:26:56 mkdocs serv
+  335  10/03/20 13:26:58 mkdocs serve
+  336  10/03/20 13:57:17 pip install mkdocs-nav-enhancements
+  339  10/03/20 13:57:39 pip install mkdocs-nav-enhancements
+  340  10/03/20 13:57:44 mkdocs build --clean
+  341  10/03/20 13:57:56 mkdocs serve
+  342  10/03/20 14:02:45 pip install mkdocs-toc-sidebar-plugin
+  343  10/03/20 14:02:49 mkdocs serve
+  344  10/03/20 14:03:24 pip install mkdocs-toc-sidebar-plugin
+  345  10/03/20 14:03:30 mkdocs build --clean
+  353  11/03/20 00:32:11 mkdocs serve
+  354  11/03/20 00:37:57 mkdocs build --clean
+  355  11/03/20 00:38:05 mkdocs serve
+  356  11/03/20 01:01:26 mkdocs build --clean ; mkdocs serve
+  703  11/03/20 13:37:32 cat mkdocs.yml 
+  709  12/03/20 11:26:35 mkdocs build --clean;mkdocs serve
+  710  12/03/20 11:29:49 mkdocs build --clean;cp -r site/* /data/websites/local-website/gradle-docs/
+ 1026  12/03/20 19:21:18 history |grep mkdocs
