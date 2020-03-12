@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://www.nbook.online/</loc>
+     <lastmod>2020-03-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://www.nbook.online/1-java-app/</loc>
+     <lastmod>2020-03-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://www.nbook.online/2-java-web/</loc>
+     <lastmod>2020-03-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://www.nbook.online/3-java-ear/</loc>
+     <lastmod>2020-03-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>

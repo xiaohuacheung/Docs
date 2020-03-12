@@ -8,14 +8,14 @@
 <meta content="Anson Cheung" name="author"/>
 <link href="../../img/favicon.ico" rel="shortcut icon"/>
 <title>Appendix B — CompTIA Linux+</title>
-<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"/>
-<link href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css" rel="stylesheet"/>
-<link href="//use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet"/>
-<link href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" rel="stylesheet"/>
+<link href="css/google-fonts.css" rel="stylesheet"/>
+<link href="css/fira_code.css" rel="stylesheet"/>
+<link href="css/all.css" rel="stylesheet"/>
+<link href="css/v4-shims.css" rel="stylesheet"/>
 <link href="../../css/theme.css" rel="stylesheet"/>
-<link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"/>
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<link href="css/github.min.css" rel="stylesheet"/>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/highlight.min.js"></script>
 <script>
         hljs.initHighlightingOnLoad();
     </script>
@@ -42,9 +42,13 @@
 <ul class="subnav">
 <li class="toctree-l2">
 <a class="nav-item" href="../Appendix-A/">Appendix A</a></li>
-<li class="toctree-l2 current">
-<a class="nav-item current" href="./">Appendix B</a>
+<li class="toctree-l2 current"><a class="nav-item current" href="./">Appendix B</a>
 <ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#write-a-system-v-init-script">Write a System V init script</a></li>
+</ul></li>
+<li class="toctree-l2"><button class="section nav-item hide">Appendix C</button>
+<ul class="subnav hide">
+<li class="toctree-l3"><a class="nav-item" href="../Appendix-C/awk/">Command:awk</a></li>
 </ul></li>
 </ul></li>
 <li class="toctree-l1"><button class="section nav-item">Lesson 01</button>
@@ -172,7 +176,7 @@
 </nav>
 <div class="repo">
 <div class="previous"><a href="../Appendix-A/">« Previous</a></div>
-<div class="next"><a href="../../Lesson-01/">Next »</a></div>
+<div class="next"><a href="../Appendix-C/awk/">Next »</a></div>
 </div>
 </aside>
 <div id="spacer"><button class="arrow"></button></div>
@@ -187,18 +191,86 @@
 <li>Appendix</li>
 </ul>
 </nav>
-<div id="content"></div>
+<div id="content"><h2 id="appendix-b">Appendix B</h2>
+<h3 id="write-a-system-v-init-script">Write a System V init script</h3>
+<p>Init is the program on Unix and Linux systems which spawns all other processes. It runs as a daemon and typically has PID 1. It is the parent of all processes. Its primary role is to create processes from a script stored in the file /etc/inittab file. The main advantages is flexibility and scalability provided by SysV.
+The Runlevels in System V describe certain states. For example:</p>
+<ul>
+<li>Runlevel 0: Halt</li>
+<li>Runlevel 1: Single user mode</li>
+<li>Runlevel 6: Reboot</li>
+</ul>
+<p>All System V init scripts are stored in /etc/rc.d/init.d/ or /etc/init.d directory. These scripts are used to control system startup and shutdown. Usually you will find scripts to start a web server or networking. For example you type the command:</p>
+<pre><code># /etc/init.d/httpd start
+</code></pre>
+<p>OR</p>
+<pre><code># /etc/init.d/network restart
+</code></pre>
+<p>In above example httpd or network are System V scripts written in bash or sh shell. Here is a sample shell script:</p>
+<pre><code>#!/bin/bash
+#
+# chkconfig: 35 90 12
+# description: Foo server
+#
+
+# Get function from functions library
+. /etc/init.d/functions
+
+# Start the service FOO
+start() {
+        initlog -c "echo -n Starting FOO server: "
+        /path/to/FOO &amp;
+        ### Create the lock file ###
+        touch /var/lock/subsys/FOO
+        success $"FOO server startup"
+        echo
+}
+
+# Restart the service FOO
+stop() {
+        initlog -c "echo -n Stopping FOO server: "
+        killproc FOO
+        ### Now, delete the lock file ###
+        rm -f /var/lock/subsys/FOO
+        echo
+}
+
+### main logic ###
+case "$1" in
+start)
+        start
+        ;;
+stop)
+        stop
+        ;;
+status)
+        status FOO
+        ;;
+restart|reload|condrestart)
+        stop
+        start
+        ;;
+*)
+        echo $"Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+esac
+
+exit 0
+</code></pre>
+<p>Above script is specific to Cent OS or Fedora Core/Red Hat Linux. But it should work on all other Linux distro as well. Make sure you replace the FOO name (word/path start with FOO) with actual application name.</p></div>
 <footer>
 <div class="footer-buttons">
 <div class="previous"><a href="../Appendix-A/" title="Appendix A"><span>Previous</span></a></div>
-<div class="next"><a href="../../Lesson-01/" title="Lesson 1 : Performing Basic Linux"><span>Next</span></a></div>
+<div class="next"><a href="../Appendix-C/awk/" title="Command:awk"><span>Next</span></a></div>
 </div>
-<div class="footer-note">
-<p>
+<!--
+     <div class="footer-note">
+        <p>
             Built with <a href="http://www.mkdocs.org">MkDocs</a> using
             <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
         </p>
-</div>
+    </div>
+  -->
 </footer>
 </div>
 </main>

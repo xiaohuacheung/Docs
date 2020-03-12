@@ -1,4 +1,5 @@
-# Write a System V init script
+# Appendix B
+## Write a System V init script
 
 Init is the program on Unix and Linux systems which spawns all other processes. It runs as a daemon and typically has PID 1. It is the parent of all processes. Its primary role is to create processes from a script stored in the file /etc/inittab file. The main advantages is flexibility and scalability provided by SysV.
 The Runlevels in System V describe certain states. For example:
