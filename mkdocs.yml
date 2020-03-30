@@ -1,0 +1,7 @@
+site_name: Anson Tech Notes
+site_author: Anson Cheung
+docs_dir: doc
+site_dir: site
+
+
+theme: readthedocs
