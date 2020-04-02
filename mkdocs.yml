@@ -1,7 +1,60 @@
 site_name: Anson Tech Notes
 site_author: Anson Cheung
 docs_dir: doc
-site_dir: site
+site_dir: /data/websites/local-website/
+
+copyright: 'Copyright &copy; 2019 - 2024 Anson Cheung'
+
+#theme: readthedocs
+nav:
+   - 'GIT 参考手册': git/index.md
+   - 'Linux 参考手册': Linux/index.md
+   - 'Gradle 参考手册': gradle/index.md
+   - '编程语言':
+      - 'Java 参考手册': Language/Java-Lang/index.md
+      - 'C语言 参考手册': Language/C-Lang/index.md
+      - 'C# 参考手册': Language/C#-Lang/index.md
 
 
-theme: readthedocs
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  feature:
+    tabs: true
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+#  social:
+#    - type: 'github'
+#      link: 'https://github.com/xiaohuacheung'
+#    - type: 'twitter'
+#      link: 'https://twitter.com/squidfunk'
+#    - type: 'linkedin'
+#      link: 'https://www.linkedin.com/in/squidfunk'
+ 
+
+
+# Google Analytics
+#google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: false
+plugins:
+    - search
+    - mkpdfs
