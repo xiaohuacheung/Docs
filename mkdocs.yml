@@ -57,4 +57,4 @@ markdown_extensions:
       permalink: false
 plugins:
     - search
-    - mkpdfs
+ #   - mkpdfs
