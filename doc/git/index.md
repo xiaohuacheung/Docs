@@ -245,11 +245,21 @@ Git命令结构如下：
 - [示例：管理Git仓库](demo-manager.md)
 - [示例：管理Git仓库](demo-manager.md)
 - [示例：管理Git仓库](demo-manager.md)
+## Git 使用指引
+- [使用指引：创建或在加入开发](guidance-create-join-project.md)
+- [使用指引：修改和提交代码](guidance-commit-push-code.md)
+- [使用指引：解决代码冲突问题](guidance-Conflict.md)
+- [使用指引：提交和打版](guidance-create-join-project.md)
+- [使用指引：发布版本](guidance-create-join-project.md)
+- [使用指引：补丁和修订](guidance-create-join-project.md)
 ## Git 操作范例
-- [示例：管理Git仓库基础](demo-manager-basic.md)
+- [示例：管理Git仓库基础](Guidance-manager-basic.md)
 - [示例：管理Git仓库高级](demo-manager-advance.md)
 - [示例：基于Git开发基础](demo-user-basic.md)
-- [示例：基于Git开发高级](demo-user-advance.md)
+## Git 常见问题
+- [Git SSL Certificate Problem Caused By Self Signed Certificates](faq-ssl.md)
+
+
 
 ## 附录：Git 命令清单
    

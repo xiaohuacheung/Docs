@@ -1,0 +1,18 @@
+ # show-index 
+GIT-SHOW-INDEX(1)                                                                                 Git Manual                                                                                GIT-SHOW-INDEX(1)
+
+NAME
+       git-show-index - Show packed archive index
+
+SYNOPSIS
+       git show-index
+
+DESCRIPTION
+       Read the idx file for a Git packfile created with git pack-objects command from the standard input, and dump its contents.
+
+       The information it outputs is subset of what you can get from git verify-pack -v; this command only shows the packfile offset and SHA-1 of each object.
+
+GIT
+       Part of the git(1) suite
+
+Git 2.18.2                                                                                        01/03/2020                                                                                GIT-SHOW-INDEX(1)

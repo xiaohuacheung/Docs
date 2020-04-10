@@ -1,8 +1,8 @@
 site_name: Anson Tech Notes
 site_author: Anson Cheung
 docs_dir: doc
-site_dir: /data/websites/local-website/
-
+# site_dir: /data/websites/local-website/
+site_dir: /data/manual/html/Notebooks/
 copyright: 'Copyright &copy; 2019 - 2024 Anson Cheung'
 
 #theme: readthedocs
@@ -10,6 +10,7 @@ nav:
    - 'GIT 参考手册': git/index.md
    - 'Linux 参考手册': Linux/index.md
    - 'Gradle 参考手册': gradle/index.md
+   - 'Private信息': private/index.md
    - '编程语言':
       - 'Java 参考手册': Language/Java-Lang/index.md
       - 'C语言 参考手册': Language/C-Lang/index.md
