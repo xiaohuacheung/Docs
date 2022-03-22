@@ -20,7 +20,7 @@ nav:
 
 # Configuration
 theme:
-  name: 'material'
+  name: 'readthedocs'
   language: 'en'
   palette:
     primary: 'indigo'
